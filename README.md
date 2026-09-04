@@ -49,7 +49,7 @@ The video file does not pass through the 8Secon upload-initialization endpoint. 
 
 ## Before using the skill
 
-The 8Secon user must first create an OAuth App and configure:
+The 8Secon user must first sign in at [8secon.com](https://8secon.com), create an OAuth App, and configure:
 
 - the application's exact callback URL;
 - the `video.upload` scope;

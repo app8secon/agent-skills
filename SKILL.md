@@ -9,7 +9,7 @@ Use the API documented in [references/api.md](references/api.md). Keep OAuth cre
 
 ## Prerequisites
 
-Before implementing or testing, tell the user to sign in to 8Secon and create an OAuth App for the external application. They must configure:
+Before implementing or testing, tell the user to sign in at [8secon.com](https://8secon.com) and create an OAuth App for the external application. They must configure:
 
 - an exact callback/redirect URI for the external app;
 - the `video.upload` scope (plus only the identity scopes the app needs);
@@ -19,7 +19,7 @@ If these values are not available, stop at configuration guidance and do not inv
 
 ## Required workflow
 
-1. Register an OAuth app for the 8Secon user, with an exact HTTPS redirect URI in production.
+1. Sign in at [8secon.com](https://8secon.com) and register an OAuth App for the 8Secon user, with an exact HTTPS redirect URI in production.
 2. Request Authorization Code + PKCE (`S256`) and the `video.upload` scope.
 3. Exchange the authorization code for an access token and refresh token.
 4. Call `POST /api/external/videos/upload/init` with the OAuth bearer token.
