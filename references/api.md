@@ -2,7 +2,7 @@
 
 Replace `BASE_URL` with the deployed 8Secon backend URL. Local development uses `http://localhost:3000`; do not assume that value in production.
 
-Before coding, the 8Secon user must create an OAuth App from an authenticated 8Secon session. Configure the external app's exact redirect URI and grant `video.upload`. Keep the returned `clientId` and one-time `clientSecret` in environment variables or a secret manager; never commit or paste them into source code.
+Before coding, the 8Secon user must sign in at [8secon.com](https://8secon.com) and create an OAuth App from their authenticated session. Configure the external app's exact redirect URI and grant `video.upload`. Keep the returned `clientId` and one-time `clientSecret` in environment variables or a secret manager; never commit or paste them into source code.
 
 ## Discovery
 
