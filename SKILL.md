@@ -23,10 +23,10 @@ If these values are not available, stop at configuration guidance and do not inv
 2. Request Authorization Code + PKCE (`S256`) and the `video.upload` scope.
 3. Exchange the authorization code for an access token and refresh token.
 4. Call `POST /api/external/videos/upload/init` with the OAuth bearer token.
-5. Upload the bytes to the returned Bunny TUS `uploadUrl` using the returned GUID, library ID, signature, and expiry.
+5. Upload the bytes to the returned TUS `uploadUrl` using the returned upload identifier, library ID, signature, and expiry.
 6. Treat the returned `videoId` as the 8Secon draft identifier and persist it with the external upload job.
 
-Do not use the first-party `ac` cookie or the internal HS256 JWT for an external integration. Do not send the video file to the 8Secon init endpoint; it only creates the draft and returns a direct Bunny upload authorization.
+Do not use the first-party `ac` cookie or the internal HS256 JWT for an external integration. Do not send the video file to the 8Secon init endpoint; it only creates the draft and returns a short-lived direct-upload authorization.
 
 ## Important current limitation
 
@@ -37,6 +37,6 @@ The current external surface exposes upload initialization only. The normal meta
 - Generate and verify `state` and PKCE `code_verifier` in the external app.
 - Validate the callback's `state`, exact `redirect_uri`, token expiry, and refresh-token errors.
 - Request only the scopes needed by the app.
-- Use idempotent external upload jobs keyed by the 8Secon `videoId` and Bunny GUID.
-- Redact `client_secret`, access tokens, refresh tokens, authorization codes, and Bunny signatures from logs.
+- Use idempotent external upload jobs keyed by the 8Secon `videoId` and returned upload identifier.
+- Redact `client_secret`, access tokens, refresh tokens, authorization codes, and upload signatures from logs.
 - Verify the API's discovery document and environment base URL before integration tests.
