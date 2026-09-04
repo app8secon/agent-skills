@@ -1,0 +1,4 @@
+interface:
+  display_name: "8Secon API Upload"
+  short_description: "Integrate external apps with the 8Secon OAuth video upload API"
+  default_prompt: "Use $8secon-api-upload to integrate an external app with the 8Secon OAuth and video upload APIs."
