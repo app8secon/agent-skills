@@ -7,6 +7,8 @@ description: Integrate an external application with the 8Secon OAuth API and dir
 
 Use the API documented in [references/api.md](references/api.md). Keep OAuth credentials and user tokens in the external app's secret store; never place them in source code, logs, prompts, or this skill package.
 
+Use `https://8secon.com` as the public API base URL and OAuth issuer. Discover OAuth endpoints from `https://8secon.com/.well-known/openid-configuration`. Do not use, expose, or derive internal service hostnames.
+
 ## Prerequisites
 
 Before implementing or testing, tell the user to sign in at [8secon.com](https://8secon.com) and create an OAuth App for the external application. They must configure:
@@ -39,4 +41,4 @@ The current external surface exposes upload initialization only. The normal meta
 - Request only the scopes needed by the app.
 - Use idempotent external upload jobs keyed by the 8Secon `videoId` and returned upload identifier.
 - Redact `client_secret`, access tokens, refresh tokens, authorization codes, and upload signatures from logs.
-- Verify the API's discovery document and environment base URL before integration tests.
+- Verify the API's discovery document before integration tests and keep the configured base URL equal to `https://8secon.com`.

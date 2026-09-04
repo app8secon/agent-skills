@@ -6,6 +6,8 @@ An agent skill for integrating external applications with the **8Secon video pla
 
 Use this skill with coding agents such as Codex, Claude Code, Cursor, GitHub Copilot, Gemini CLI, Windsurf, and other agents that support the Agent Skills format.
 
+All public API and OAuth requests use the canonical base URL `https://8secon.com`. Integrations should discover OAuth endpoints from `https://8secon.com/.well-known/openid-configuration` and must not depend on internal service hostnames.
+
 ## What this skill helps with
 
 - Registering an OAuth application in 8Secon.
@@ -40,7 +42,7 @@ External app starts Authorization Code + PKCE
         ↓
 External app receives an OAuth access token with video.upload
         ↓
-POST /api/external/videos/upload/init
+POST https://8secon.com/api/external/videos/upload/init
         ↓
 Client uploads the video directly through the returned TUS endpoint
 ```
