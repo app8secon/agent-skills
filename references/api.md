@@ -69,7 +69,7 @@ The access token must include `video.upload`.
 }
 ```
 
-The response contains `data.video` and `data.upload`, including `videoId`, `guid`, `libraryId`, `uploadUrl`, `authorizationSignature`, and `authorizationExpire`. Upload the file to Bunny's TUS endpoint using those values. The 8Secon init endpoint does not receive the file bytes.
+The response contains `data.video` and `data.upload`, including `videoId`, `guid`, `libraryId`, `uploadUrl`, `authorizationSignature`, and `authorizationExpire`. Upload the file to the returned TUS endpoint using those values. The 8Secon init endpoint does not receive the file bytes.
 
 ## Current boundary
 
