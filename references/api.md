@@ -1,6 +1,12 @@
 # 8Secon API reference
 
-Replace `BASE_URL` with the deployed 8Secon backend URL. Local development uses `http://localhost:3000`; do not assume that value in production.
+Use this canonical public base URL for every API and OAuth request:
+
+```text
+BASE_URL=https://8secon.com
+```
+
+Discover OAuth endpoints from `BASE_URL/.well-known/openid-configuration`. Do not use or expose internal service hostnames in application code, configuration, documentation, or logs.
 
 Before coding, the 8Secon user must sign in at [8secon.com](https://8secon.com) and create an OAuth App from their authenticated session. Configure the external app's exact redirect URI and grant `video.upload`. Keep the returned `clientId` and one-time `clientSecret` in environment variables or a secret manager; never commit or paste them into source code.
 
